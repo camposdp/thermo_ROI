@@ -7,6 +7,7 @@ Open and process ROIs from thermographic images
 * Run and the files will not be replaces, mas duplicated with a "_" in front of the name
 
 2) Extract ROI on python:
-*Open main.py in Python
-*Replace "mypath" variable with the folder path
- -> Modifications may be necessary depending on the application
+
+* Open main.py in Python
+* Replace "mypath" variable with the folder path
+* Modifications may be necessary depending on the application
