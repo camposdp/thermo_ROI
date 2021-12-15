@@ -199,19 +199,24 @@ def readFolders(mypath):
         f.extend(filenames)
         break
     print("Onde começar? \n\n")
-    for (i, item) in enumerate(dirnames, start=1):
-        print(i, item)
+    for (k, item) in enumerate(dirnames, start=1):
+        print(k, item)
     start=int(input("\n \n Digite o número da pasta...\n Pasta = "))
-        
+    
     length = len(dirnames)
     for i in range(start-1,length):
         g = []
         for (dirpath2, dirnames2, filenames2) in walk(mypath+"\\"+dirnames[i]):
             g.extend(filenames2)
             break
+        print("\n\n Onde começar (indivíduo)? \n\n")
+        for (k, item) in enumerate(dirnames2, start=1):
+            print(k, item)
+        start2=int(input("\n \n Digite o número da pasta...\n Pasta = "))
+        
         length2 = len(dirnames2)
         
-        for j in range(length2):
+        for j in range(start2-1,length2):
       
             h = []
             for (dirpath3, dirnames3, filenames3) in walk(mypath+"\\"+dirnames[i]+"\\"+dirnames2[j]):
@@ -228,6 +233,7 @@ def readFolders(mypath):
             else:
                 sx = "F"
                 
+            print(dirnames[i])    
             print(dirnames2[j])
             pre = str(n).zfill(2)+"_"+txt[0]+sx+age[0]   
             lst=[i for i in filenames3 if i.endswith('.csv')]
@@ -244,7 +250,7 @@ def readFolders(mypath):
             getROI(file2,pre)
             print("Selecione a perna esquerda")
             getROI(file2,pre)
-            x = input("Continuar (Enter) / Sair (q)...\n")
+            x = input("Continuar (Enter) / Sair (q+Enter): ")
             if x == 'q':
                 break
          
